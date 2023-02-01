@@ -33,8 +33,6 @@ if button and pdf_uploaded is not None:
         z.close()
         file.seek(0)
         zip_contents = file.getvalue()
+
         with top_container, col2:
             download = st.download_button("Download", data=zip_contents, file_name=f"Images.zip")
-
-        if download:
-            st.cache()
