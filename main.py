@@ -20,7 +20,7 @@ with top_container, col1:
 st.markdown("---")
 if button and pdf_uploaded is not None:
     if pdf_uploaded.type == "application/pdf":
-        images = pdf2image.convert_from_bytes(pdf_uploaded.read(), poppler_path="poppler/library/bin")
+        images = pdf2image.convert_from_bytes(pdf_uploaded.read())
         file = io.BytesIO()
         with zipfile.ZipFile(file, 'w') as z:
             for i, page in enumerate(images):
